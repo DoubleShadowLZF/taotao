@@ -1,0 +1,21 @@
+server:
+  port: 4005
+spring:
+  datasource:
+    #   数据源基本配置
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.100.120:3307/taotao
+  redis:
+    host: 192.168.100.120
+    port: 6379
+taotao:
+  service:
+    portal: http://192.168.100.124:4002
+  url:
+    delete-cart-list: /cart/cartList
+  redis:
+    order-id: taotao:order:id
+  cookie:
+    cart-name: CARTITEM

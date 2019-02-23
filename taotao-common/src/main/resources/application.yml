@@ -1,0 +1,21 @@
+taotao:
+  fast-dfs:
+    nginx-fdfs-port: 8080
+  cookie:
+    cart-name: CARTITEM
+  redis:
+    token: TT_TOKEN
+  service:
+    manager: http://192.168.100.124:4000
+    rest: http://192.168.100.124:4001/rest
+    portal: http://192.168.100.124:4002
+    search: http://192.168.100.124:4003
+    sso: http://192.168.100.124:4004
+  url:
+    ad-list-url: ${taotao.service.manager}/content/adItemList
+    search-url: ${taotao.service.search}/taotao-search
+    item-url: ${taotao.service.rest}/item/{itemId}
+    item-param-item: ${taotao.service.rest}/item/param/{itemId}
+    user-cooike: ${taotao.service.sso}/token/{token}
+    login: ${taotao.service.sso}/page/login
+    user-token: ${taotao.service.sso}/user/token/{token}

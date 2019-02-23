@@ -1,0 +1,25 @@
+taotao:
+  redis:
+    token: taotao:portal:token
+server:
+  port: 4004
+spring:
+  redis:
+    host: 192.168.100.120
+    port: 6379
+    database: 8
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+    #   数据源基本配置
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.100.120:3307/taotao
+
+logging:
+  level:
+    com.taotao.sso: debug
+

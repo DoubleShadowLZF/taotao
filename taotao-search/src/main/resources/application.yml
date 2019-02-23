@@ -1,0 +1,24 @@
+spring:
+  data:
+    solr:
+      host: http://192.168.100.120:8983/solr
+  datasource:
+    #   数据源基本配置
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.100.120:3307/taotao
+
+server:
+  context-path: /taotao-search
+  port: 4003
+  tomcat:
+    uri-encoding: UTF-8
+
+taotao:
+  search:
+    solr:
+      collection: collection1
+logging:
+  level:
+    com.taotao.taotaosearch: debug

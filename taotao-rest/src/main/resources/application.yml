@@ -1,0 +1,23 @@
+server:
+  port: 4001
+  context-path: /rest
+
+logging:
+  level:
+    com.taotao.rest: debug
+    com.taotao.dao: debug
+
+spring:
+  datasource:
+    #   数据源基本配置
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.100.120:3307/taotao?useSSL=false
+  redis:
+    host: 192.168.100.120
+    port: 6379
+    database: 1
+    timeout: 60
+mybatis:
+  mapper-locations: classpath:com/taotao/dao/mapper/*.xml

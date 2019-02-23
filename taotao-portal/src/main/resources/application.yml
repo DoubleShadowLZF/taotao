@@ -1,0 +1,55 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  redis:
+    host: 192.168.100.120
+    port: 6379
+    database: 1
+    timeout: 60
+  http:
+    encoding:
+      charset: UTF-8
+  datasource:
+    #   数据源基本配置
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.100.120:3307/taotao
+
+server:
+  port: 4002
+  display-name: taotao-portal
+  tomcat:
+    uri-encoding: UTF-8
+    enabled: true
+    force: true
+
+logging:
+  level:
+    com.taotao.portal:  debug
+#拦截器加载时，比bean容器先加载，必须在项目中配置
+taotao:
+  cookie:
+    cart-name: CARTITEM
+    token: TT_TOKEN
+  redis:
+    token: taotao:portal:token
+  host: localhost
+  service:
+    manager: http://${taotao.host}:4000
+    rest: http://${taotao.host}:4001/rest
+    portal: http://${taotao.host}:4002
+    search: http://${taotao.host}:4003
+    sso: http://${taotao.host}:4004
+    order: http://${taotao.host}:4005
+  url:
+    ad-list-url: ${taotao.service.manager}/content/adItemList
+    search-url: ${taotao.service.search}/taotao-search
+    item-url: ${taotao.service.rest}/item/{itemId}
+    item-param-item: ${taotao.service.rest}/item/param/{itemId}
+    user-cooike: ${taotao.service.sso}/token/{token}
+    login: ${taotao.service.sso}/page/login
+    user-token: ${taotao.service.sso}/user/token/{token}
+    create-order: ${taotao.service.order}/order/create
