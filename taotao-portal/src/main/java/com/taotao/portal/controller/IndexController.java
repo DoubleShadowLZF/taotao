@@ -47,6 +47,7 @@ public class IndexController {
 		map.put("page", page);
 		map.put("row", row);
 		String url = urlConfig.getSearchUrl() + "?q={q}&page={page}&row={row}";
+//		String url = "http://search.taotao.com?q={q}&page={page}&row={row}";
 		List searchResult = restTemplate.getForObject(url, JSONArray.class, map);
 		req.setAttribute("itemList", searchResult);
 		req.setAttribute("query", queryString);

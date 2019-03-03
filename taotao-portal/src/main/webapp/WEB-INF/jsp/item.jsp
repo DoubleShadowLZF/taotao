@@ -408,7 +408,7 @@
         console.log(itemId);
         var buyNum = document.getElementById("buy-num").value;
         console.log(buyNum);
-        window.location.href = "http://localhost:4002/cart/add/"+itemId+".html?num="+buyNum;
+        window.location.href = "http://www.taotao.com/cart/add/"+itemId+".html?num="+buyNum;
     }
 </script>
 </body>

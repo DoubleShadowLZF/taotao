@@ -36,14 +36,13 @@ taotao:
     token: TT_TOKEN
   redis:
     token: taotao:portal:token
-  host: localhost
   service:
-    manager: http://${taotao.host}:4000
-    rest: http://${taotao.host}:4001/rest
-    portal: http://${taotao.host}:4002
-    search: http://${taotao.host}:4003
-    sso: http://${taotao.host}:4004
-    order: http://${taotao.host}:4005
+    manager: http://192.168.100.124:4000
+    rest: http://192.168.100.124:4001
+    portal:  http://192.168.100.124:4002
+    search: http://192.168.100.124:4003
+    sso: http://192.168.100.124:4004
+    order: http://192.168.100.124:4005
   url:
     ad-list-url: ${taotao.service.manager}/content/adItemList
     search-url: ${taotao.service.search}/taotao-search

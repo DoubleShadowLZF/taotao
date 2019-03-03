@@ -1,5 +1,8 @@
 package com.taotao.common.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -150,7 +153,8 @@ public final class CookieUtils {
                 cookie.setMaxAge(cookieMaxage);
             if (null != request) {// 设置域名的cookie
             	String domainName = getDomainName(request);
-            	System.out.println(domainName);
+            	System.out.println(">>>cookie的domain："+domainName);
+
                 if (!"localhost".equals(domainName)) {
                 	cookie.setDomain(domainName);
                 }

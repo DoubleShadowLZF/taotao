@@ -47,7 +47,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		String cookieValue = CookieUtils.getCookieValue(httpServletRequest, token);
 		//浏览器中cookie过期
 		if(cookieValue == null){
-			httpServletResponse.sendRedirect(urlConfig.getLogin());
+			httpServletResponse.sendRedirect("http://sso.taotao.com/page/login");
 			return false;
 		}
 		Map<String,Object> params = new HashMap<>(1);
@@ -59,10 +59,10 @@ public class LoginInterceptor implements HandlerInterceptor {
 			if(data != null){
 				return true;
 			}
-			httpServletResponse.sendRedirect(urlConfig.getLogin());
+			httpServletResponse.sendRedirect("http://sso.taotao.com/page/login");
 			return false;
 		}
-		httpServletResponse.sendRedirect(urlConfig.getLogin());
+		httpServletResponse.sendRedirect("http://sso.taotao.com/page/login");
 		return false;
 	}
 

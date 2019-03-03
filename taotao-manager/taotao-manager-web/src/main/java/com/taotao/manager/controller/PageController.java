@@ -17,7 +17,12 @@ public class PageController {
 	private PageService pageService;
 
     @GetMapping("/{page}")
-    public String toIndexPage(@PathVariable String page){
+    public String toPage(@PathVariable String page){
 		return page;
+    }
+
+    @GetMapping({"/index", "/index.html", "/"})
+    public String toIndexPage(){
+        return "index";
     }
 }

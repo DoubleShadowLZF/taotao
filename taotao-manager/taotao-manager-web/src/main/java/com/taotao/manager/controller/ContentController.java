@@ -1,13 +1,15 @@
 package com.taotao.manager.controller;
 
+import com.github.pagehelper.PageInfo;
+import com.taotao.common.utils.EasyUIResult;
+import com.taotao.manager.pojo.qo.ContentQo;
 import com.taotao.manager.pojo.domain.TbContent;
 import com.taotao.manager.service.ContentService;
 import com.taotao.common.utils.TaotaoResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @Description
@@ -29,4 +31,8 @@ public class ContentController {
 		return contentService.getAdItemList();
 	}
 
+	@GetMapping("/query/list")
+	public EasyUIResult getContentList(ContentQo query){
+		return contentService.getContentList(query);
+	}
 }

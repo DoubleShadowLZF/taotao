@@ -64,7 +64,7 @@ public class IndexServiceImpl implements IndexService {
 
 	public static void main(String[] args) {
 		RestTemplate restTemplate = new RestTemplate();
-		List<TbContent> tbContents = restTemplate.getForObject("http://localhost:4000/content/adItemList", List.class);
+		List<TbContent> tbContents = restTemplate.getForObject("http://manager.taotao.com/content/adItemList", List.class);
 		System.out.println(tbContents);
 	}
 }

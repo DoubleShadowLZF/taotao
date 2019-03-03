@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>manager</artifactId>
+        <artifactId>taotao-manager</artifactId>
         <groupId>com.taotao</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -46,22 +46,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <!--&lt;!&ndash; JSP相关 &ndash;&gt;
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jsp-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        &lt;!&ndash; 文件上传组件 &ndash;&gt;
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -81,7 +65,7 @@
                 <version>2.2</version>
                 <configuration>
                     <!--端口号 -->
-                    <port>4003</port>
+                    <port>4000</port>
                     <path>/</path>
                 </configuration>
             </plugin>

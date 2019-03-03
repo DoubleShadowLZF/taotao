@@ -7,7 +7,7 @@ taotao:
     token: TT_TOKEN
   service:
     manager: http://192.168.100.124:4000
-    rest: http://192.168.100.124:4001/rest
+    rest: http://192.168.100.124:4001
     portal: http://192.168.100.124:4002
     search: http://192.168.100.124:4003
     sso: http://192.168.100.124:4004

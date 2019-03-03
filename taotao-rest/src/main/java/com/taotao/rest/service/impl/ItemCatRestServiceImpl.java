@@ -7,6 +7,8 @@ import com.taotao.rest.pojo.CatNode;
 import com.taotao.rest.pojo.CatResult;
 import com.taotao.rest.service.ItemCatRestService;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -18,8 +20,11 @@ import java.util.List;
  * @Description
  */
 @Service
-@Slf4j
 public class ItemCatRestServiceImpl implements ItemCatRestService {
+
+
+	private Logger log = LoggerFactory.getLogger(ItemCatRestServiceImpl.class);
+
 	@Autowired
 	private TbItemCatDAO tbItemCatDAO;
 

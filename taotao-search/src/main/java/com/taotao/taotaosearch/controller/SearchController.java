@@ -23,14 +23,14 @@ public class SearchController {
 	@GetMapping
 	public Object getList(@RequestParam("q") String queryString, @RequestParam(value = "page", defaultValue = "1") Integer page,
 	                      @RequestParam(value = "row",defaultValue = "60") Integer row) {
-//		if(!StringUtils.isEmpty(queryString)){
-//			try {
-//				queryString = new String(queryString.getBytes("ISO8859-1"),"UTF-8");
+		if(!StringUtils.isEmpty(queryString)){
+			try {
+				queryString = new String(queryString.getBytes("ISO8859-1"),"UTF-8");
 				log.debug("搜索商品名称：{}",queryString);
-//			} catch (UnsupportedEncodingException e) {
-//				e.printStackTrace();
-//			}
-//		}
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+		}
 		return searchService.queryList(queryString, page, row);
 	}
 }

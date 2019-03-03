@@ -11,8 +11,6 @@ import java.io.IOException;
  */
 public abstract class FdfsClient {
 
-	protected final Logger logger = LoggerFactory.getLogger(FdfsBetsWuClient.class);
-
 	public abstract String uploadFile(MultipartFile file) throws IOException;
 
 	public abstract void deleteFile(String fileUrl);

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.taotao</groupId>
-    <artifactId>manager</artifactId>
+    <artifactId>taotao-manager</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>taotao-manager-pojo</module>
@@ -20,7 +20,6 @@
         <artifactId>parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
 
     <build>
         <plugins>

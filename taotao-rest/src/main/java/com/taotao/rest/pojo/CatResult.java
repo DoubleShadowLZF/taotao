@@ -8,8 +8,14 @@ import java.util.List;
 /**
  * @Description 
  */
-@Data
-@Accessors(chain = true)
 public class CatResult {
 	private List data;
+
+	public List getData() {
+		return data;
+	}
+
+	public void setData(List data) {
+		this.data = data;
+	}
 }

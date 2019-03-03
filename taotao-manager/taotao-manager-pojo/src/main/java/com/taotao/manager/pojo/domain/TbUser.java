@@ -1,8 +1,5 @@
 package com.taotao.manager.pojo.domain;
 
-import com.taotao.common.utils.Validator;
-
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,13 +13,13 @@ public class TbUser implements Serializable {
     /**
      * 用户名
      */
-    @NotNull(groups = {Validator.Insert.class})
+//    @NotNull(groups = {Validator.Insert.class})
     private String username;
 
     /**
      * 密码，加密存储
      */
-    @NotNull(groups = {Validator.Insert.class})
+//    @NotNull(groups = {Validator.Insert.class})
     private String password;
 
     /**

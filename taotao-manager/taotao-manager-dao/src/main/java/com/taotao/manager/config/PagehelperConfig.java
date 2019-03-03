@@ -7,11 +7,11 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Properties;
 
-@Configuration
-@ConditionalOnClass(PageHelper.class)
+//@Configuration
+//@ConditionalOnClass(PageHelper.class)
 public class PagehelperConfig {
 
-	@Bean
+//	@Bean
 	public PageHelper pageHelper() {
 		System.out.println("MyBatisConfiguration.pageHelper()");
 		PageHelper pageHelper = new PageHelper();

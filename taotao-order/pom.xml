@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.taotao</groupId>
-    <artifactId>order</artifactId>
+    <artifactId>taotao-order</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>order</name>
+    <name>taotao-order</name>
     <description>淘淘商城订单模块</description>
     <packaging>war</packaging>
 

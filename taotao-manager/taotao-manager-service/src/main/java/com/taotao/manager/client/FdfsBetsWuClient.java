@@ -6,11 +6,9 @@ import com.github.tobato.fastdfs.domain.TrackerLocator;
 import com.github.tobato.fastdfs.exception.FdfsUnsupportStorePathException;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
 import com.taotao.manager.properties.FdfsProperties;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FilenameUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -23,16 +21,17 @@ import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
 
 @Component
-@ConditionalOnClass(TrackerConnectionManager.class)
 @EnableConfigurationProperties(FdfsProperties.class)
+@Slf4j
 public class FdfsBetsWuClient extends FdfsClient {
 
-	private final Logger logger = LoggerFactory.getLogger(FdfsBetsWuClient.class);
 
 	@Autowired
 	private FdfsProperties fastDfsConfig;
 
+	@Autowired
 	private FastFileStorageClient fastFileStorageClient;
+	@Autowired
 	private TrackerConnectionManager trackerConnectionManager;
 
 	public FdfsBetsWuClient(){}
@@ -92,7 +91,7 @@ public class FdfsBetsWuClient extends FdfsClient {
 	 * @return
 	 */
 	@Override
-	public void deleteFile(String fileUrl) {
+	public void deleteFile(String fileUrl) {@
 		if (StringUtils.isEmpty(fileUrl)) {
 			return;
 		}
@@ -100,11 +99,8 @@ public class FdfsBetsWuClient extends FdfsClient {
 			StorePath storePath = StorePath.praseFromUrl(fileUrl);
 			fastFileStorageClient.deleteFile(storePath.getGroup(), storePath.getPath());
 		} catch (FdfsUnsupportStorePathException e) {
-			logger.warn(e.getMessage());
+			log.warn(e.getMessage());
 		}
-	}
-
-	public static void main(String[] args) {
 	}
 
 }

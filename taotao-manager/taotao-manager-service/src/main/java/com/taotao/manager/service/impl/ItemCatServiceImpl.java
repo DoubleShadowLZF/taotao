@@ -30,8 +30,9 @@ public class ItemCatServiceImpl implements ItemCatService {
 		List<TbItemCat> tbItemCats = tbItemCatDAO.selectByExample(example);
 		for (TbItemCat cat : tbItemCats) {
 			EUTreeNode node = new EUTreeNode();
-			node.setId(cat.getId()).setText(cat.getName())
-					.setState(cat.getIsParent() ? "closed" : "open");
+			node.setId(cat.getId());
+			node.setText(cat.getName());
+			node.setState(cat.getIsParent() ? "closed" : "open");
 			result.add(node);
 		}
 		return result;

@@ -6,7 +6,7 @@ var TT = TAOTAO = {
         }
         var _this = this;
         $.ajax({
-            url: "http://localhost:4004/user/token/" + _ticket,
+            url: "http://sso.taotao.com/user/token/" + _ticket,
             dataType: "jsonp",
             type: "GET",
             success: function (data) {
@@ -33,11 +33,11 @@ function logout() {
         return
     }
     $.ajax({
-        url: "http://localhost:4004/user/logout/" + token,
+        url: "http://sso.taotao.com/user/logout/" + token,
         type: "GET",
         success: function (data) {
             if (data.status == 200) {
-                // window.href = "http://localhost:4002";
+                // window.href = "http://www.taotao.com";
                 location.reload()
             }
         }
